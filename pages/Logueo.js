@@ -1,13 +1,40 @@
 import React, { useState } from "react";
 import { Stack, Container, Form, Button } from "react-bootstrap";
 
+import firebaseApp from "../firebase/credenciales";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+const auth = getAuth(firebaseApp);
+
 const Logueo = () => {
   const [estaRegistrandose, setEstaRegistrandose] = useState(false);
+
+  async function submitHandler(e) {
+    e.preventDefault();
+    const correo = e.target.formBasicEmail.value;
+    const contra = e.target.formBasicPassword.value;
+    /* console.log(correo, contra); */
+    if (estaRegistrandose) {
+      //si se esta registrando
+      const usuario = await createUserWithEmailAndPassword(
+        auth,
+        correo,
+        contra
+      );
+    } else {
+      //si está iniciando sesión
+      signInWithEmailAndPassword(auth, correo, contra);
+    }
+  }
+
   return (
     <Container>
       <Stack gap={3}>
         <h1>{estaRegistrandose ? "Registrate" : "Inicia Sesión"}</h1>
-        <Form>
+        <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />
