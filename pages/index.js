@@ -22,5 +22,13 @@ export default function Principal() {
     }
   });
 
-  return <>{usuarioGlobal ? <Home /> : <Logueo />}</>;
+  return (
+    <>
+      {usuarioGlobal ? (
+        <Home correoUsuario={usuarioGlobal.email} />
+      ) : (
+        <Logueo />
+      )}
+    </>
+  );
 }
