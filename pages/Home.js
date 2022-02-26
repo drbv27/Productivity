@@ -29,7 +29,7 @@ const Home = ({ correoUsuario }) => {
       return infoDocu.tareas;
     } else {
       //si no existe
-      await setDoc(docuRef, { reacciones: [...fakeData] });
+      await setDoc(docuRef, { tareas: [...fakeData] });
       const consulta = await getDoc(docuRef);
       const infoDocu = consulta.data();
       return infoDocu.tareas;
