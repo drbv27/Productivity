@@ -31,7 +31,7 @@ const AgregarTarea = ({ correoUsuario, arrayTareas, setArrayTareas }) => {
   return (
     <Container>
       <Form onSubmit={añadirTarea}>
-        <Row>
+        <Row className="mb-5">
           <Col>
             <Form.Control
               type="text"
