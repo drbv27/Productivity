@@ -24,6 +24,8 @@ const AgregarTarea = ({ correoUsuario, arrayTareas, setArrayTareas }) => {
     updateDoc(docuRef, { tareas: [...nuevoArrayTareas] });
     //actualizar estado
     setArrayTareas(nuevoArrayTareas);
+    //limpiar formulario
+    e.target.formDescripcion.value = "";
   }
 
   return (
