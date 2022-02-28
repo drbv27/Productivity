@@ -27,7 +27,9 @@ const ListadoTareas = ({ arrayTareas, correoUsuario, setArrayTareas }) => {
               <Row>
                 <Col>{objetoTarea.descripcion}</Col>
                 <Col>
-                  <Button variant="secondary">Ver Archivo</Button>
+                  <a href={objetoTarea.url}>
+                    <Button variant="secondary">Ver Archivo</Button>
+                  </a>
                 </Col>
                 <Col>
                   <Button
