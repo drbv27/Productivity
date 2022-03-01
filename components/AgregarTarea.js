@@ -38,7 +38,8 @@ const AgregarTarea = ({ correoUsuario, arrayTareas, setArrayTareas }) => {
     const archivoRef = ref(storage, `documentos/${archivoLocal.name}`);
     await uploadBytes(archivoRef, archivoLocal);
     //obtener url de descarga
-    urlDescarga = getDownloadURL(archivoRef);
+    urlDescarga = await getDownloadURL(archivoRef);
+    console.log(urlDescarga);
   }
 
   return (
