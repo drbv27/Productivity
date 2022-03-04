@@ -48,7 +48,7 @@ const Home = ({ correoUsuario }) => {
 
   return (
     <Container>
-      <h4>Hola Sesión iniciada</h4>
+      <h4>Hola Sesión iniciada: {correoUsuario}</h4>
       <Button onClick={() => signOut(auth)}>Cerrar Sesión</Button>
       <hr />
       <AgregarTarea
