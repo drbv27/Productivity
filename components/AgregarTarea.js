@@ -46,19 +46,23 @@ const AgregarTarea = ({ correoUsuario, arrayTareas, setArrayTareas }) => {
     <Container>
       <Form onSubmit={añadirTarea}>
         <Row className="mb-5">
-          <Col className="bg-light border border border-secondary rounded">
+          <Col className="bg-light border border border-secondary rounded pt-2 pb-2 mx-2">
             <h5>Planear</h5>
             <Form.Control
               type="text"
               placeholder="Descripcion"
               id="formDescripcion"
+              className="my-2"
             />
             <Form.Control
               type="file"
               placeholder="Añade Archivo"
+              className="my-2"
               onChange={fileHandler}
             />
-            <Button type="submit">Agregar Tarea</Button>
+            <Button type="submit" className="my-2">
+              Agregar Tarea
+            </Button>
           </Col>
           <Col>
             <h5>Ejecutando</h5>
