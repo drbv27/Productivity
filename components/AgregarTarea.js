@@ -14,6 +14,7 @@ const AgregarTarea = ({ correoUsuario, arrayTareas, setArrayTareas }) => {
     e.preventDefault();
     //crear nuevo array de tareas
     const descripcion = e.target.formDescripcion.value;
+    console.log(descripcion);
     const nuevoArrayTareas = [
       ...arrayTareas,
       {
@@ -64,14 +65,28 @@ const AgregarTarea = ({ correoUsuario, arrayTareas, setArrayTareas }) => {
               Agregar Tarea
             </Button>
           </Col>
-          <Col>
+          {/*           <Col>
             <h5>Ejecutando</h5>
           </Col>
           <Col>
             <h5>Finalizadas</h5>
-          </Col>
+          </Col> */}
         </Row>
       </Form>
+
+      <h3 className="text-center mb-4">Tareas</h3>
+
+      <Row className="text-center">
+        <Col>
+          <h5>Pendientes</h5>
+        </Col>
+        <Col>
+          <h5>En Ejecución</h5>
+        </Col>
+        <Col>
+          <h5>Finalizadas</h5>
+        </Col>
+      </Row>
       <hr />
     </Container>
   );
