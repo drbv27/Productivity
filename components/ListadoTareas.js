@@ -25,20 +25,24 @@ const ListadoTareas = ({ arrayTareas, correoUsuario, setArrayTareas }) => {
           return (
             <>
               <Row>
-                <Col>{objetoTarea.descripcion}</Col>
                 <Col>
-                  <a href={objetoTarea.url}>
-                    <Button variant="secondary">Ver Archivo</Button>
-                  </a>
+                  <Row>{objetoTarea.descripcion}</Row>
+                  <Row>
+                    <a href={objetoTarea.url}>
+                      <Button variant="secondary">Ver Archivo</Button>
+                    </a>
+                  </Row>
+                  <Row>
+                    <Button
+                      variant="danger"
+                      onClick={() => eliminarTarea(objetoTarea.id)}
+                    >
+                      Eliminar Tarea
+                    </Button>
+                  </Row>
                 </Col>
-                <Col>
-                  <Button
-                    variant="danger"
-                    onClick={() => eliminarTarea(objetoTarea.id)}
-                  >
-                    Eliminar Tarea
-                  </Button>
-                </Col>
+                <Col>columna2</Col>
+                <Col>columna3</Col>
               </Row>
               <hr />
             </>
